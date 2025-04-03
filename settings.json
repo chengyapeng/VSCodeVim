@@ -1,0 +1,257 @@
+{
+    "workbench.settings.applyToAllProfiles": [],
+    "workbench.colorTheme": "Everforest Dark",      // 主题（需要自己下载 everforest主题 插件）
+    "workbench.iconTheme": "material-icon-theme",   // icon
+    "workbench.settings.editor": "json",            // 当 ctrl + , 时，会直接跳转到当前的 settings.json 文件
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#ffb6c1",
+        "editor.lineHighlightBackground": "#27472a",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    "workbench.layoutControl.enabled": true,        // 是否显示右上方的小图标
+    "workbench.editor.enablePreview": false,        // 在目录位置单击即可打开文件，若设置为 true 单击并不会真正打开
+
+    "window.menuBarVisibility": "visible",          // 是否显示 menu bar，即 左上角 文件、编辑、选择
+    "window.enableMenuBarMnemonics": false,         // 按住 alt 时是否显示 下划线
+    "window.customMenuBarAltFocus": false,          // 按住 alt 时切换焦点到 menu bar
+    "window.titleBarStyle": "custom",               // 指定了 VS Code 窗口的标题栏样式。(略微带点圆角的效果)
+    "window.dialogStyle": "custom",                 // 定制 VS Code 弹出对话框的样式。(略微带点圆角的效果)
+
+    "editor.fontSize": 18,                          // 字体大小
+    "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",      // 设置字体
+    "editor.fontLigatures": true,                   // 连字效果
+    "editor.occurrencesHighlight": "singleFile",    // 高亮当前光标所在的单词以及同名的单词
+    "editor.minimap.enabled": true ,                // 控制右侧缩略图是否显示
+    "editor.minimap.autohide": true,                // 在 editor.minimap.enabled 为 true 的情况下，只有当鼠标移动到右侧时，才会显示缩略图
+    "editor.lineNumbers": "relative",               // 相对行号
+    "editor.formatOnSave": false,                   // 代码保存时时候自动格式化
+    "editor.cursorBlinking": "solid",               // 设置编辑器中的光标为不闪烁（即光标始终显示为一个实心块）。你也可以选择其他选项，比如 "blink"（闪烁）或 "phase"（渐变闪烁）。
+    "editor.cursorStyle": "line",                   // 设置光标样式为竖线。VS Code 还支持其他光标样式，例如 "block"（块状光标）或 "underline"（下划线光标）。
+    "editor.guides.bracketPairs": true,             // 代码区域竖直和水平的高亮显示
+    "editor.renderWhitespace": "all",               // 渲染空白区域（如控制显示 ·）
+    "editor.cursorSmoothCaretAnimation": "on",      // 光标移动的更加平滑
+    "editor.experimentalEditContextEnabled": false,  // 输入法相关，打字时会有下划线
+
+    "terminal.integrated.defaultProfile.windows": "PowerShell",     // windows系统，集成终端中，默认的命令行终端设置为 PowerShell。
+    "terminal.integrated.defaultProfile.linux": "fish",             // linux系统，集成终端中，默认的命令行终端设置为 fish。
+    "terminal.integrated.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",     // 设置集成终端的字体为 JetBrains Mono，如果没有安装该字体，则会依次使用 Consolas、Courier New，或者任意一个等宽字体（monospace）。这样可以让代码在终端中更清晰易读。
+
+    "remote.SSH.remotePlatform": {
+        "192.168.1.23": "linux",
+        "192.168.152.152": "linux"
+    },
+
+    //Todo Tree 插件 标签配置  标签兼容大小写字母
+    "todo-tree.regex.regex": "((%|#|//|<!--|^\\s*\\*)\\s*($TAGS)|^\\s*- \\[ \\])",      // 前缀
+    "todo-tree.general.tags": [    //添加自定义的标签成员,将在下面实现它们的样式
+        "todo",  
+        "bug",
+        "tag",
+        "done",
+        "mark",
+        "test",
+        "update"
+    ],
+    "todo-tree.regex.regexCaseSensitive": false,
+    "todo-tree.highlights.defaultHighlight": {  //如果相应变量没赋值就会使用这里的默认值
+        "foreground": "#000000",      //字体颜色
+        "background": "#ffff00",     //背景色
+        "icon": "check",            //标签样式 check 是一个对号的样式
+        "rulerColour": "#ffff00",    //边框颜色
+        "type": "tag",              //填充色类型  可在TODO TREE 细节页面找到允许的值 
+        "iconColour": "#ffff00"      //标签颜色
+    },
+    "todo-tree.highlights.customHighlight": {
+        "todo": {                       // todo 		需要做的功能 
+            "icon": "alert",          //标签样式
+            "background": "#c9c552",  //背景色
+            "rulerColour": "#c9c552", //外框颜色
+            "iconColour": "#c9c552",  //标签颜色
+        },
+        "bug": {                        //bug		必须要修复的BUG 
+            "background": "#eb5c5c",
+            "icon": "bug",
+            "rulerColour": "#eb5c5c",
+            "iconColour": "#eb5c5c",
+        },
+        "tag": {                        //tag		标签
+            "background": "#38b2f4",
+            "icon": "tag",
+            "rulerColour": "#38b2f4",
+            "iconColour": "#38b2f4",
+            "rulerLane": "full"
+        },
+        "done": {                       //done		已完成
+            "background": "#5eec95",
+            "icon": "check",
+            "rulerColour": "#5eec95",
+            "iconColour": "#5eec95",
+        },
+        "mark": {                       //mark     	标记一下
+            "background": "#f90",
+            "icon": "note",
+            "rulerColour": "#f90",
+            "iconColour": "#f90",
+        },
+        "test": {                       //test		测试代码
+            "background": "#df7be6",
+            "icon": "flame",
+            "rulerColour": "#df7be6",
+            "iconColour": "#df7be6",
+        },
+        "update": {                     //update  	优化升级点
+            "background": "#d65d8e",
+            "icon": "versions",
+            "rulerColour": "#d65d8e",
+            "iconColour": "#d65d8e",
+        }
+    },
+
+    //（当前没有 .vsvimrc 文件） "vim.vimrc.path": "$HOME/.vsvimrc",             // 这个选项指定了你的 vimrc 文件的路径。在这个例子中，路径为 ~/.vsvimrc，表示该文件位于用户的主目录下。
+    "vim.incsearch": true,                          // 启用增量搜索后，在你输入搜索内容时，搜索结果会实时更新，显示当前匹配的部分，而不是等到你完全输入后才开始搜索。
+    "vim.useSystemClipboard": true,                 // 这意味着你可以通过 Vim 插件复制和粘贴内容到系统剪贴板。
+    "vim.useCtrlKeys": true,                        // 允许在 Vim 模式下使用标准的 Ctrl 键（如 Ctrl+c, Ctrl+v）来执行相应操作。
+    "vim.foldfix": true,                            // 在 foldFix 为 true 时，在收起状态下上下移动不会自动展开折叠代码
+    "vim.easymotion": true,                         // (在本行)按下 f 或 F，再随意按下一个 字母，会调到这个字母上
+    "vim.hlsearch": true,                           // 当使用 /、? 或 * 等搜索命令时，所有匹配的文本会高亮显示
+    "vim.highlightedyank.enable": true,             // 当你用 y 复制文本时，被复制的文本会短暂高亮，提供视觉反馈
+    "vim.highlightedyank.color": "rgb(230, 97, 89, 0.7)",       // 设置高亮复制操作的背景颜色。
+    "vim.highlightedyank.textColor": "white",                   // 设置高亮复制操作的文本颜色。
+    "vim.handleKeys": {         // 是 VSCode Vim 插件 中的一项设置，用于定义在 Vim 模式下 哪些键被 Vim 处理，以及是否允许它们执行默认的 VSCode 行为。
+		"<C-a>": false,         // 按下 Ctrl + a 时，VSCode 会进行全选，而不会触发 Vim 模式下的任何操作。
+        "<C-/>": true,
+		// "<C-f>": false,
+		// "<C-i>": true,
+		// "<C-o>": true,
+		// "<C-r>": true,
+		// "<C-s>": false,
+		// "<C-v>": true,
+		// "<C-w>": true,
+		// "<C-u>": false,
+		// "<C-d>": false,
+	},
+    "vim.statusBarColorControl": true,
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [          // before 是当下使用的 快捷键
+        {
+            "before": ["j", "k"],           // 在插入模式下，输入 "jk" 时触发
+            "after": ["<Esc>"]              // 将 "jk" 映射为退出插入模式（等效于按下 <Esc> 键）
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before":["leader", "i"],       // 快速切换 true 和 false（需要自己下载 Toggle Boolean ）
+            "commands":["extension.toggleBool"]
+        },
+        {
+            "before":["leader", "w"],       // 保存文件
+            "commands":[":w"]
+        },
+        {
+            "before":["leader", "q"],       // 退出文件
+            "commands":[":wq"]
+        },
+        {
+            "before":["leader", "x"],       // 保存并退出文件
+            "commands":[":x!"]
+        },
+        {
+            "before":["<c-a>"],             // 全选文件内容
+            "after":["g", "g", "V", "G"]
+        },
+        {
+            "before":["leader", "k"],       // 显示当前光标所在位置的悬浮提示。
+            "commands":["editor.action.showHover"]
+        },
+        {
+            "before":["]", "d"],            //  跳转到下一个标记（例如下一个错误或警告）
+            "commands":["editor.action.marker.next"]
+        },
+        {
+            "before":["[", "d"],            // 跳转到上一个标记（例如上一个错误或警告）
+            "commands":["editor.action.marker.prev"]
+        },
+        {
+            "before":["leader", "c", "a"],  // 执行快速修复操作。这个命令通常用于通过 VSCode 提供的自动修复功能，修复代码中的潜在问题。
+            "commands":["editor.action.quickFix"]
+        },    
+        { 	
+			"before": ["leader","e"],      // 打开目录
+			"commands": ["workbench.view.explorer"]
+		},
+		{ 	
+			"before": ["leader","E"],      // 关闭目录
+			"commands": ["workbench.action.toggleSidebarVisibility"]
+		},
+        { 	
+			"before": ["leader","o"],      // 打开 文件 或 文件夹（但是好像不需要，因为 space 可以打开或关闭 文件 或 文件夹）
+			"commands": ["workbench.action.toggleAuxiliaryBar"]
+		},
+		{ 	
+			"before": ["leader","h"],      // 关闭 文件 或 文件夹（但是好像不需要，因为 space 可以打开或关闭 文件 或 文件夹）
+			"commands": ["lineHighlightBookmark.toogleBookmarks"]
+		},
+        { 	
+			"before": ["leader","f"],      // 按下 Space 和 f（即 <space>f）会启动 快速打开 功能，允许你快速搜索并打开文件。
+			"commands": ["workbench.action.quickOpen"]
+		},
+		{ 	
+			"before": ["leader","F"],      // 按下 Space 和 F（即 <space>F）可以打开 VSCode 的搜索面板，帮助你搜索当前项目中的内容。
+			"commands": ["workbench.view.search"]
+		},
+        {
+            "before": ["H"],                // 切换到 上一个标签页
+            "commands": [":tabprev"]
+        },
+        {
+            "before": ["L"],                // 切换到 下一个标签页
+            "commands": [":tabnext"]
+        },
+        {
+            "before": ["leader", "s"],      // 垂直分屏
+            "commands": [":vsplit"]
+        },
+        {
+            "before": ["J"],      // 当前代码下移一行
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["K"],      // 当前代码上衣一行
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // 是 VSCode Vim 插件 中用于定义 非递归 的 普通模式快捷键绑定 的设置。
+        // 它允许你定义键绑定（按键组合）并执行指定的命令，但是与 normalModeKeyBindings 不同的是，它会 阻止递归调用。
+        {
+			"before": ["leader","u"],           // 查看代码引用(浮动窗)
+			"commands": ["editor.action.referenceSearch.trigger"]
+		},
+		{
+			"before": ["leader","U"],           // 查看代码引用（单独引用panel)
+			"commands": ["references-view.findReferences"]
+		},
+   		{
+			"before": ["<leader>","i","n"],     // 函数调用链
+			"commands": ["references-view.showCallHierarchy"]
+		},
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["j", "k"],           // 在插入模式下，输入 "jk" 时触发
+            "after": ["<Esc>"]              // 将 "jk" 映射为退出插入模式（等效于按下 <Esc> 键）
+        },
+        {
+            "before": [">"],                // 向右缩进
+            "comments": "editor.action.indentLines"
+        },
+        {
+            "before": ["<"],                // 向左缩进
+            "comments": "editor.action.outdentLines"
+        },
+    ],
+}
