@@ -1,3 +1,4 @@
+// 默认配置
 {
     "workbench.settings.applyToAllProfiles": [],
     "workbench.colorTheme": "Everforest Dark",      // 主题（需要自己下载 everforest主题 插件）
@@ -56,7 +57,7 @@
         "test",
         "update"
     ],
-    "todo-tree.regex.regexCaseSensitive": false,
+    "todo-tree.regex.regexCaseSensitive": false,    // 用来控制你自定义的正则表达式是否区分大小写。
     "todo-tree.highlights.defaultHighlight": {  //如果相应变量没赋值就会使用这里的默认值
         "foreground": "#000000",      //字体颜色
         "background": "#ffff00",     //背景色
@@ -124,15 +125,6 @@
     "vim.handleKeys": {         // 是 VSCode Vim 插件 中的一项设置，用于定义在 Vim 模式下 哪些键被 Vim 处理，以及是否允许它们执行默认的 VSCode 行为。
 		"<C-a>": false,         // 按下 Ctrl + a 时，VSCode 会进行全选，而不会触发 Vim 模式下的任何操作。
         "<C-/>": true,
-		// "<C-f>": false,
-		// "<C-i>": true,
-		// "<C-o>": true,
-		// "<C-r>": true,
-		// "<C-s>": false,
-		// "<C-v>": true,
-		// "<C-w>": true,
-		// "<C-u>": false,
-		// "<C-d>": false,
 	},
     "vim.statusBarColorControl": true,
     "vim.leader": "<space>",
@@ -227,6 +219,7 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         // 是 VSCode Vim 插件 中用于定义 非递归 的 普通模式快捷键绑定 的设置。
         // 它允许你定义键绑定（按键组合）并执行指定的命令，但是与 normalModeKeyBindings 不同的是，它会 阻止递归调用。
+
         {
 			"before": ["leader","u"],           // 查看代码引用(浮动窗)
 			"commands": ["editor.action.referenceSearch.trigger"]
@@ -239,6 +232,17 @@
 			"before": ["<leader>","i","n"],     // 函数调用链
 			"commands": ["references-view.showCallHierarchy"]
 		},
+        {
+            "before": ["f"],                    // 将 f 映射为 vim.easymotion 中的 "<leader>", "<leader>", "s"(搜索单个字符)
+            "commands": 
+            [{
+                "command": "vim.remap",
+                "args": 
+                {
+                    "after": ["<leader>", "<leader>", "s"]
+                }
+            }]
+        },
     ],
     "vim.visualModeKeyBindings": [
         {
