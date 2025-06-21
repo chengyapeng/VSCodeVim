@@ -1,14 +1,5 @@
 // 将键绑定放在此文件中以覆盖默认值
 [
-    {   // 打开文件目录
-        "command": "workbench.action.toggleSidebarVisibility",
-        "key": "ctrl+e"
-    },
-    {   // 关闭文件目录（即使光标聚焦在 目录 上也可以关闭目录）
-        "command": "workbench.files.action.focusFilesExplorer",
-        "key": "ctrl+e",
-        "when": "editorTextFocus"
-    },
     {   // 创建文件
         "command": "explorer.newFile",
         "key": "a",

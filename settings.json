@@ -1,26 +1,41 @@
-// 默认配置
+// ----------------------------------------- 默认配置 -----------------------------------------
 {
     "workbench.settings.applyToAllProfiles": [],
-    "workbench.colorTheme": "Everforest Dark",      // 主题（需要自己下载 everforest主题 插件）
+    "workbench.colorTheme": "Catppuccin Frappé",      // 主题（需要自己下载 catppuccin 主题 插件）
     "workbench.iconTheme": "material-icon-theme",   // icon
     "workbench.settings.editor": "json",            // 当 ctrl + , 时，会直接跳转到当前的 settings.json 文件
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#ffb6c1",
-        "editor.lineHighlightBackground": "#27472a",
+        "editor.lineHighlightBackground": "#ffffff27",
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f",
         "statusBar.foreground": "#ffffff",
         "statusBar.debuggingForeground": "#ffffff"
     },
-    "workbench.layoutControl.enabled": true,        // 是否显示右上方的小图标
-    "workbench.editor.enablePreview": false,        // 在目录位置单击即可打开文件，若设置为 true 单击并不会真正打开
+    "workbench.layoutControl.enabled": false,        // 是否显示右上方的小图标
+    "workbench.editor.enablePreview": false, // (左侧 bar)为 hidden 时 会隐藏左侧 bar(目录、扩展、...)
+        /*
+            show extensions -- 打开扩展
+        */
+    "workbench.editor.showTabs": "multiple", // (底部 bar)控制 状态栏 的可见性。状态栏是 VS Code 窗口底部的条形区域，通常显示文件的编码、行号、Git 状态等信息。
+    "workbench.startupEditor": "welcomePage",       // 控制 启动时默认打开什么内容。 none--启动时什么都不显示，直接是一个空白的编辑器窗口
+    "workbench.sideBar.location": "left",          // 控制侧边栏的位置。目录等显示在右侧
+    "workbench.tree.enableStickyScroll": true,      // 控制是否启用“粘性滚动”效果。在资源管理器等树形结构中，如果开启此功能，滚动时选择的文件/文件夹会保持在视图顶部，直到滚动到下一个文件夹或文件。
+    "workbench.tree.indent": 16,                    // 设置树形结构（如文件资源管理器）中每一层文件夹或文件的缩进量，单位是像素。
 
-    "window.menuBarVisibility": "visible",          // 是否显示 menu bar，即 左上角 文件、编辑、选择
+    "explorer.compactFolders": false,               // 控制是否在资源管理器中折叠并压缩空的文件夹。
+    "explorer.decorations.badges": true,            // 控制资源管理器中文件或文件夹是否显示小徽章。（例如 Git 状态等）。
+
+    "git.decorations.enabled": true,                // 控制 Git 装饰功能是否启用。
+
+    "breadcrumbs.enabled": false,                   // 是否显示 menu bar，即 左上角 文件、编辑、选择    可以使用 leader + m 控制
+
     "window.enableMenuBarMnemonics": false,         // 按住 alt 时是否显示 下划线
     "window.customMenuBarAltFocus": false,          // 按住 alt 时切换焦点到 menu bar
     "window.titleBarStyle": "custom",               // 指定了 VS Code 窗口的标题栏样式。(略微带点圆角的效果)
     "window.dialogStyle": "custom",                 // 定制 VS Code 弹出对话框的样式。(略微带点圆角的效果)
+    "window.commandCenter": false,                  // 隐藏右上角的 命令中心搜索栏按钮（就是以前 VS Code 顶部中间或右侧的输入框图标）。
 
     "editor.fontSize": 18,                          // 字体大小
     "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",      // 设置字体
@@ -35,7 +50,8 @@
     "editor.guides.bracketPairs": true,             // 代码区域竖直和水平的高亮显示
     "editor.renderWhitespace": "all",               // 渲染空白区域（如控制显示 ·）
     "editor.cursorSmoothCaretAnimation": "on",      // 光标移动的更加平滑
-    "editor.experimentalEditContextEnabled": false,  // 输入法相关，打字时会有下划线
+    "editor.experimentalEditContextEnabled": false, // 输入法相关，打字时会有下划线
+    "editor.stickyScroll.enabled": false,           // 当设置为 true 时，在你向下滚动代码时，最顶部的作用域信息（如函数名、类名）会固定显示在编辑器顶部，方便你始终知道当前代码属于哪个作用域
 
     "terminal.integrated.defaultProfile.windows": "PowerShell",     // windows系统，集成终端中，默认的命令行终端设置为 PowerShell。
     "terminal.integrated.defaultProfile.linux": "fish",             // linux系统，集成终端中，默认的命令行终端设置为 fish。
@@ -45,6 +61,8 @@
         "192.168.1.23": "linux",
         "192.168.152.152": "linux"
     },
+
+    "git.path": "D:\\software\\git\\Git\\bin\\git.exe",     // 指定 git.exe 的路径，不然无法使用 Git Graph 插件
 
     //Todo Tree 插件 标签配置  标签兼容大小写字母
     "todo-tree.regex.regex": "((%|#|//|<!--|^\\s*\\*)\\s*($TAGS)|^\\s*- \\[ \\])",      // 前缀
@@ -113,11 +131,11 @@
     },
 
     //（当前没有 .vsvimrc 文件） "vim.vimrc.path": "$HOME/.vsvimrc",             // 这个选项指定了你的 vimrc 文件的路径。在这个例子中，路径为 ~/.vsvimrc，表示该文件位于用户的主目录下。
+    "vim.easymotion": true,                         // (在本行)按下 f 或 F，再随意按下一个 字母，会调到这个字母上
     "vim.incsearch": true,                          // 启用增量搜索后，在你输入搜索内容时，搜索结果会实时更新，显示当前匹配的部分，而不是等到你完全输入后才开始搜索。
     "vim.useSystemClipboard": true,                 // 这意味着你可以通过 Vim 插件复制和粘贴内容到系统剪贴板。
     "vim.useCtrlKeys": true,                        // 允许在 Vim 模式下使用标准的 Ctrl 键（如 Ctrl+c, Ctrl+v）来执行相应操作。
     "vim.foldfix": true,                            // 在 foldFix 为 true 时，在收起状态下上下移动不会自动展开折叠代码
-    "vim.easymotion": true,                         // (在本行)按下 f 或 F，再随意按下一个 字母，会调到这个字母上
     "vim.hlsearch": true,                           // 当使用 /、? 或 * 等搜索命令时，所有匹配的文本会高亮显示
     "vim.highlightedyank.enable": true,             // 当你用 y 复制文本时，被复制的文本会短暂高亮，提供视觉反馈
     "vim.highlightedyank.color": "rgb(230, 97, 89, 0.7)",       // 设置高亮复制操作的背景颜色。
@@ -148,8 +166,24 @@
             "commands":[":wq"]
         },
         {
+            "before":["leader", "leader", "q"],       // 退出文件
+            "commands":["workbench.action.closeWindow"]
+        },
+        {
             "before":["leader", "x"],       // 保存并退出文件
             "commands":[":x!"]
+        },
+        {
+            "before":["leader", "a"],       // 隐藏左侧 bar（资源管理器、搜索、扩展 ...）
+            "commands":["workbench.action.toggleActivityBarVisibility"]         
+        },
+        {
+            "before": ["<leader>", "b"],    // 隐藏底部 bar
+            "commands": ["workbench.action.toggleStatusbarVisibility"]
+        },
+        {
+            "before": ["<leader>", "m"],    // 隐藏顶部 bar
+            "commands": ["workbench.action.toggleMenuBar"]
         },
         {
             "before":["<c-a>"],             // 全选文件内容
@@ -171,16 +205,16 @@
             "before":["leader", "c", "a"],  // 执行快速修复操作。这个命令通常用于通过 VSCode 提供的自动修复功能，修复代码中的潜在问题。
             "commands":["editor.action.quickFix"]
         },    
+        {
+			"before": ["leader","e"],      // 打开目录 并 将光标聚集在目录中的当前文件位置
+            "commands":["revealInExplorer"]
+        },
+        {
+			"before": ["leader", "leader", "e"],      // 打开/关闭 目录
+            "commands":["workbench.action.toggleSidebarVisibility"]
+        },
         { 	
-			"before": ["leader","e"],      // 打开目录
-			"commands": ["workbench.view.explorer"]
-		},
-		{ 	
-			"before": ["leader","E"],      // 关闭目录
-			"commands": ["workbench.action.toggleSidebarVisibility"]
-		},
-        { 	
-			"before": ["leader","o"],      // 打开 文件 或 文件夹（但是好像不需要，因为 space 可以打开或关闭 文件 或 文件夹）
+			"before": ["leader","o"],      // 显示或隐藏右侧的辅助侧边栏（Auxiliary Bar） 当前应该是 Copilot
 			"commands": ["workbench.action.toggleAuxiliaryBar"]
 		},
 		{ 	
@@ -233,13 +267,13 @@
 			"commands": ["references-view.showCallHierarchy"]
 		},
         {
-            "before": ["f"],                    // 将 f 映射为 vim.easymotion 中的 "<leader>", "<leader>", "s"(搜索单个字符)
+            "before": ["f"],                    // 将 f 映射为 vim.easymotion 中的 "<leader>", "<leader>", "/"(搜索多个字符)
             "commands": 
             [{
                 "command": "vim.remap",
                 "args": 
                 {
-                    "after": ["<leader>", "<leader>", "s"]
+                    "after": ["<leader>", "<leader>", "/"]
                 }
             }]
         },
